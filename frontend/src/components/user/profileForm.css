@@ -1,0 +1,27 @@
+.dragAndDrop {
+    border: 2px dashed #aaa;
+    background-color: var(--neutral-1);
+    align-items: center;
+    justify-content: center !important;
+    height: 200px;
+    transition: border-color 0.3s, background-color 0.3s;
+    cursor: pointer;
+}
+
+.draggingStyle {
+    background-color: var(--neutral-3);
+    border-style: solid;
+    border-color: var(--neutral-3);
+}
+
+.dragAndDrop>* {
+    pointer-events: none;
+}
+
+.column{
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}   
