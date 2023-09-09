@@ -15,11 +15,9 @@ import { AuthProvider } from "./contexts/authContext";
 
 ReactDOM.render(
   <ChakraProvider theme={theme}>
-    <BrowserRouter basename="/">
       <AuthProvider>
         <App />
       </AuthProvider>
-    </BrowserRouter>
   </ChakraProvider>,
   document.getElementById("root")
 );
