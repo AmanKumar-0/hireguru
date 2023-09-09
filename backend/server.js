@@ -50,6 +50,20 @@ app.use("/api/user", userProfileRoutes);
 
 
 const PORT = process.env.PORT || 4000;
+if (
+  process.env.NODE_ENV === "production" ||
+  process.env.NODE_ENV === "staging"
+) {
+  // app.use(express.static("client/build"));
+  // app.get("*", (req, res) => {
+  //   res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  // });
+  app.use(express.static(path.join(__dirname, './frontend', 'build')));
+  app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, './frontend', 'build', 'index.html'));
+  })
+}
+
 
 app.listen(PORT, () => {
   console.log("Server started on port 4000");
