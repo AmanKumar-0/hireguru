@@ -12,7 +12,7 @@ export const getAuthorizationHeader = () => `Bearer ${getToken()}`;
 
 const axiosInstance = axios.create({
   // baseURL: "https://proud-red-kit.cyclic.app/",
-  baseURL: "http://localhost:4000/",
+  baseURL: process.env.API,
   headers: {
     Authorization: getAuthorizationHeader(),
   },
