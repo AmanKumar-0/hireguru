@@ -4,6 +4,7 @@ import App from "./App";
 
 // Chakra UI
 import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter } from "react-router-dom";
 import theme from "./theme";
 
 // Fonts
@@ -14,9 +15,11 @@ import { AuthProvider } from "./contexts/authContext";
 
 ReactDOM.render(
   <ChakraProvider theme={theme}>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
+    <BrowserRouter>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </BrowserRouter>
   </ChakraProvider>,
   document.getElementById("root")
 );
