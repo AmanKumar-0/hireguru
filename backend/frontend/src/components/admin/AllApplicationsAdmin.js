@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Box,
   Heading,
@@ -44,26 +44,28 @@ const AllApplicationsAdmin = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const toast = useToast();
+  // const toast = useToast();
   const navigate = useNavigate();
+      console.log("data-test-22");
 
   const fetchAllApplications = async () => {
     try {
       setLoading(true);
       const data = await getAllApplicationsAdmin();
+      console.log(data,"data-test-22");
       setApplications(data.data);
       
     } catch (error) {
       
-      toast(
-        ToastConfig(
-          "Error",
-          error.response
-            ? error.response.data.message
-            : "Backend service unavailable",
-          "error"
-        )
-      );
+      // toast(
+      //   ToastConfig(
+      //     "Error",
+      //     error.response
+      //       ? error.response.data.message
+      //       : "Backend service unavailable",
+      //     "error"
+      //   )
+      // );
     }
     setLoading(false);
   };
@@ -158,10 +160,10 @@ const AllApplicationsAdmin = () => {
                       justifyContent={"flex-start"}
                       flexDirection={"column"}
                     >
-                      <Heading fontSize={["xl"]} color={"gray.600"}>
+                      <Heading fontSize={["xl"]} color={"gray.600"} data-testid="job-role">
                         {application?.job?.role}
                       </Heading>
-                      <Text color={"gray.400"} mt={[1]}>
+                      <Text color={"gray.400"} mt={[1]} data-testid="job-location">
                         {application?.job?.location}
                       </Text>
                     </Box>

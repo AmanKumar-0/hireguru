@@ -1,33 +1,27 @@
-import React, { useEffect, useState } from "react";
 import {
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  useDisclosure,
-  Input,
-  Button,
-  Text,
-  Heading,
   Box,
   Divider,
-  Tag,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+  Heading,
   Icon,
   Link,
-  useToast,
+  Tag,
+  Text,
+  useToast
 } from "@chakra-ui/react";
-import { Document, Page } from "react-pdf";
+import React from "react";
 
 import { BsLinkedin } from "react-icons/bs";
 
 import { useProfile } from "../../contexts/profileContext";
 
 import eyes from "../../assets/eyes.gif";
-import { ToastConfig } from "../ToastConfig";
-import { getFileContent } from "../../api/profile";
+// import { getFileContent } from "../../api/profile";
 
 const ProfileDrawer = ({ isOpen, onClose, onOpen }) => {
   const toast = useToast();
