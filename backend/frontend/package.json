@@ -1,24 +1,19 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy":"http://localhost:8000",
+  "proxy": "http://localhost:8000",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.7.3",
     "@react-pdf-viewer/core": "^3.12.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.0",
     "file-saver": "^2.0.5",
     "jwt-decode": "^3.1.2",
     "pdfjs-dist": "^3.10.111",
     "pspdfkit": "^2023.4.0",
-    "react": "^18.2.0",
     "react-bootstrap-icons": "^1.10.3",
     "react-confetti": "^6.1.0",
-    "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-pdf": "^7.3.3",
     "react-router-dom": "^6.15.0",
@@ -30,7 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --onlyChanged -- --config=jest.config.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -50,5 +45,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^29.5.14",
+    "babel-jest": "^29.7.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
+    "jest-transform-stub": "^2.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
